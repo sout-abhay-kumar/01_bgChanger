@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [color, setColor] = useState("olive");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="header" style={{ backgroundColor: color }}>
+        <h1>Backgroud Color Changer</h1>
+        <div className="colorBtn">
+          <button onClick={() => {setColor("black")}}>Black</button>
+          <button onClick={() => {setColor("blue")}}>Blue</button>
+          <button onClick={() => {setColor("white")}}>white</button>
+          <button onClick={() => {setColor("orange")}}>Orange</button>
+        </div>
+      </div>
+    </>
   );
 }
 
 export default App;
+// Learning: That's why we use hook in react as the name suggests the react library is very reactive define once and use everywhere
+// in UI with the help of hook.
